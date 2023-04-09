@@ -1,7 +1,8 @@
-learn java
-make my bed
-eat pizza
-purge
-start the chooper
-swim in the ocean
+Learn java
+Purge all night
+Start the yatch
+Learn concurrency in go programming language
 Read a book
+Learn python
+Run a marathon
+Hack the world
