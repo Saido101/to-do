@@ -3,6 +3,4 @@ Purge all night
 Start the yatch
 Learn concurrency in go programming language
 Read a book
-Learn python
-Run a marathon
 Hack the world

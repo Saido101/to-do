@@ -7,8 +7,13 @@ add_button = ye.Button("Add")
 list_box = ye.Listbox(values=functions.get_todos(),
                       key="todos", enable_events=True, size=[45, 10])
 edit_button = ye.Button("Edit")
+complete_button = ye.Button("Complete")
+exit_button = ye.Button("Exit")
 
-window = ye.Window("My To-Do App", layout=[[label], [input_box, add_button], [list_box, edit_button]],
+window = ye.Window("My To-Do App", layout=[[label],
+                                           [input_box, add_button],
+                                           [list_box, edit_button, complete_button],
+                                           [exit_button]],
                    font=("Helvetica", 10))
 
 while True:
@@ -32,6 +37,15 @@ while True:
             todos[index] = new_todo + "\n"
             functions.write_todos(todos)
             window['todos'].update(values=todos)
+        case "Complete":
+            todo_to_remove = value["todos"][0]
+            todos = functions.get_todos()
+            todos.remove(todo_to_remove)
+            functions.write_todos(todos)
+            window['todos'].update(values=todos)
+            window['todo'].update(value='')
+        case "Exit":
+            break
         case "todos":
             window["todo"].update(value=value['todos'][0])
         case ye.WIN_CLOSED:
